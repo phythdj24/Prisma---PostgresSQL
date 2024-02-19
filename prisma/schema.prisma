@@ -7,20 +7,5 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = "postgres://postgres.mqfxgmhhcculvbpemgqb:SangamDalal@24@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres"
-}
-model user {
-  id Int @id @default(autoincrement())
-  email String @unique
-  firstName String?
-  lastName String?
-  password String
-}
-
-model Todo {
-  id Int @id @default(autoincrement())
-  title String
-  done Boolean @default(false)
-  description String?
-  userId Int
+  url      = env("DATABASE_URL")
 }
