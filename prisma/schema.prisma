@@ -22,5 +22,7 @@ model User {
 
 model Owener {
   id Int @id @default(autoincrement())
+  firstName String?
+  lastName String?
   
 }
