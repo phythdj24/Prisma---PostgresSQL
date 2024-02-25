@@ -9,4 +9,12 @@ app.get("/", (req,res)=> {
     return res.send("Hello server");
 })
 
+//middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: false}))
+
+// Routes
+import routes from './routes/index.js'
+app.use(routes)
+
 app.listen(PORT,()=> console.log(`server is running On PORT:- ${PORT}`))
